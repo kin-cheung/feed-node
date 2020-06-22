@@ -11,12 +11,11 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy app source
-COPY ./www/Archive.zip . && RUN unzip Archive.zip && RUN rm Archive.zip
-
+# build package
+RUN npm run build
 
 # Bind the port that the image will run on
 EXPOSE 8080
 
 # Define the Docker image's behavior at runtime
-CMD ["node", "server.js"]
+CMD ["node", "./www/server.js"]
