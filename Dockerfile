@@ -12,7 +12,8 @@ COPY package*.json ./
 RUN npm install
 
 # Copy app source
-COPY . .
+COPY ./www/Archive.zip . && RUN unzip Archive.zip && RUN rm Archive.zip
+
 
 # Bind the port that the image will run on
 EXPOSE 8080
