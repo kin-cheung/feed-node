@@ -15,6 +15,7 @@ before_script:
 
 script:
   - docker --version # print the version for logging
+  - npm run build
   - docker build -t feed-node .
   - docker tag feed-node "$DOCKER_USERNAME"/feed-node:latest
 
