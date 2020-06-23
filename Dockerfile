@@ -15,7 +15,7 @@ RUN npm install
 COPY . .
 
 # build app
-RUN npm run build
+RUN npm run tsc
 
 # Bind the port that the image will run on
 EXPOSE 8080
